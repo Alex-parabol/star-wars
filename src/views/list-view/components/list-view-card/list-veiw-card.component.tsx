@@ -1,22 +1,31 @@
 /* import { useEffect } from 'react'; */
 import { StarWarsCharacter } from "../../../../interfaces";
-import "./list-veiw-card.component.scss";
+/* import "./list-veiw-card.component.scss"; */
 
 function ListViewCard(props: { character: StarWarsCharacter }) {
   return (
-    <article className="app-list-view-card">
-      <div className="app-list-view-card-back"></div>
-      <div className="app-list-view-card-front"></div>
-      <h1 className="app-list-view-card-front__title">
-        {props.character.name}{" "}
-      </h1>
-      <div className="app-list-view-card-back__height">
-        <span className="app-list-view-card-back__height-title">Altura:</span>
-        <span className="app-list-view-card-back__height-info">
-          {props.character.height}
-        </span>
+    <div className="card">
+      <div className="card-inner">
+        <div className="card-front">
+          <p>{props.character.name} </p>
+        </div>
+        <div className="card-back">
+          <h1>{props.character.name}</h1>
+          <ul>
+            <li>
+              <strong>Height:</strong> {props.character.height}
+            </li>
+            <li>
+              <strong>Species:</strong> {props.character.gender}
+            </li>
+            <li>
+              <strong>Starship:</strong> {props.character.starships}
+            </li>
+            <li></li>
+          </ul>
+        </div>
       </div>
-    </article>
+    </div>
   );
 }
 
