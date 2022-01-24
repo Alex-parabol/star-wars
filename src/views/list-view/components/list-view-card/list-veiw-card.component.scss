@@ -1,6 +1,6 @@
-.app-list-view-card { 
+.app-list-view-card-back {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-bottom: 1px solid #aaa;
   padding: 16px 0;
 
@@ -28,7 +28,7 @@
       font-size: 14px;
       font-weight: normal;
     }
-    
+
     &-info {
       color: #333333;
       font-size: 14px;
