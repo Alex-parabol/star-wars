@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { SearchProps } from "../../../../interfaces";
 
-const Search = ({ getQuery }) => {
+const Search = ({ getQuery }: SearchProps) => {
   const [text, setText] = useState("");
 
   const onChange = (query: string) => {
@@ -11,7 +12,6 @@ const Search = ({ getQuery }) => {
   return (
     <section className="search">
       <form>
-        0
         <input
           type="text"
           className="form-control"
@@ -21,6 +21,7 @@ const Search = ({ getQuery }) => {
           autoFocus
         />
       </form>
+      <button>Planets</button>
     </section>
   );
 };

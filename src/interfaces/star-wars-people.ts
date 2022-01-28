@@ -4,8 +4,9 @@ export interface StarWarsPeople {
   previous?: string;
   results: StarWarsCharacter[];
 }
-export interface queryState {
-  query: string;
+
+export interface SearchProps {
+  getQuery: Function;
 }
 export interface StarWarsCharacter {
   name: string;
