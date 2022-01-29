@@ -3,12 +3,15 @@ import "./App.scss";
 import axios from "axios";
 import Header from "./views/list-view/components/header/Header";
 import Search from "./views/list-view/components/search/search";
+import Species from "./views/list-view/components/species/Species";
 import ListViewComponent from "./views/list-view/list-view.component";
 import { StarWarsCharacter, StarWarsPeople } from "./interfaces/index";
+import { StarWarsSpecies, StarWarsSpecie } from "./interfaces/index";
+import SpeciesProvider from "./context/SpeciesContext";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [query, setQuery] = useState<any>("");
-
   const [characters, setCharacters] = useState<StarWarsCharacter[]>([]);
 
   function getQuery(query: string): void {
@@ -19,19 +22,27 @@ function App() {
     const fetchCharacters = async () => {
       const res = await axios(url);
       const people = res.data.results;
-      setCharacters([characters, ...people]);
+      setCharacters([...characters, ...people]);
     };
     fetchCharacters();
   }, [query]);
 
   return (
-    <div className="app">
-      <Header />
-      <Search getQuery={getQuery} />
-      <main>
-        <ListViewComponent characters={characters} />
-      </main>
-    </div>
+    <SpeciesProvider>
+      <div className="app">
+        <Header />
+        <Search getQuery={getQuery} />
+        <main>
+          <Routes>
+            <Route
+              path="*"
+              element={<ListViewComponent characters={characters} />}
+            />
+            <Route path="/species" element={<Species />} />
+          </Routes>
+        </main>
+      </div>
+    </SpeciesProvider>
   );
 }
 
