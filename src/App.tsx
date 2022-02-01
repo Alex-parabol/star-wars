@@ -9,6 +9,7 @@ import { StarWarsCharacter, StarWarsPeople } from "./interfaces/index";
 import { StarWarsSpecies, StarWarsSpecie } from "./interfaces/index";
 import SpeciesProvider from "./context/SpeciesContext";
 import { Routes, Route, Link } from "react-router-dom";
+import SpeciesDetail from "./views/list-view/components/detail/SpeciesDetail";
 
 function App() {
   const [query, setQuery] = useState<any>("");
@@ -39,6 +40,9 @@ function App() {
               element={<ListViewComponent characters={characters} />}
             />
             <Route path="/species" element={<Species />} />
+            <Route path="/species/:name">
+              <Route path="/species/:name" element={<SpeciesDetail />} />
+            </Route>
           </Routes>
         </main>
       </div>

@@ -10,7 +10,7 @@ function ListViewComponent(props: { characters: StarWarsCharacter[] }) {
   return (
     <section className="cards">
       {props.characters.map((character) => (
-        <ListViewCard character={character} />
+        <ListViewCard character={character} key={character.url} />
       ))}
     </section>
   );
