@@ -14,10 +14,28 @@ import SpeciesDetail from "./views/list-view/components/detail/SpeciesDetail";
 function App() {
   const [query, setQuery] = useState<any>("");
   const [characters, setCharacters] = useState<StarWarsCharacter[]>([]);
+  const [loading, setLoading] = useState(false);
 
   function getQuery(query: string): void {
     setQuery(query);
   }
+
+  //ENDPOINT /people?search=R2-D2
+  useEffect(() => {
+    setLoading(true);
+    const url = `https://swapi.dev/api/people?search=${query}`;
+
+    const fetchCharacters = async () => {
+      const res = await axios(url);
+      const people = res.data.results;
+      setCharacters(people);
+      setLoading(false);
+    };
+    if (!loading) {
+      fetchCharacters();
+    }
+  }, [query]);
+
   useEffect(() => {
     const url = "https://swapi.dev/api/people/";
     const fetchCharacters = async () => {
@@ -26,7 +44,7 @@ function App() {
       setCharacters([...characters, ...people]);
     };
     fetchCharacters();
-  }, [query]);
+  }, []);
 
   return (
     <SpeciesProvider>
