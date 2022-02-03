@@ -21,11 +21,6 @@ const Search = ({ getQuery }: SearchProps) => {
           autoFocus
         />
       </form>
-      <button
-      /* onClick={} */
-      >
-        Planets
-      </button>
     </section>
   );
 };

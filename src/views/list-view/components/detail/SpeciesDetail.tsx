@@ -4,7 +4,7 @@ import { SpeciesContext } from "../../../../context/SpeciesContext";
 
 function SpeciesDetail() {
   const speciesContext = useContext(SpeciesContext);
-  console.log(speciesContext);
+
   const { name } = useParams();
   const thisSpecie = speciesContext.find((prod) => prod.name === name);
 
