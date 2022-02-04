@@ -22,7 +22,9 @@ const Species = () => {
 
   return (
     <div>
-      <button onClick={alphabeticalOrder}>Alphabetic Order</button>
+      <button className="button_slide slide_down" onClick={alphabeticalOrder}>
+        Alphabetic Order
+      </button>
       <div className="cards">
         {speciesContext.map((specie) => (
           <div className="card">

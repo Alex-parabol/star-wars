@@ -13,7 +13,7 @@ header {
     width: 25%;
     padding: 10px;
     @include mobile {
-      width: 50%;
+      width: 90%;
     }
     ul {
       display: flex;
@@ -30,6 +30,9 @@ header {
           font-size: 1.2rem;
           color: white;
           font-weight: 700;
+          @include mobile {
+            font-size: 1rem;
+          }
         }
       }
     }
