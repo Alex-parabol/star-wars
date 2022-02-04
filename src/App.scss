@@ -34,6 +34,17 @@ body {
     }
 
     .search {
+      .search {
+        height: 100px;
+        input {
+          @include mobile {
+            height: 30px;
+          }
+        }
+        @include mobile {
+          height: 50px;
+        }
+      }
       input {
         display: block;
         padding: 10px;
@@ -56,9 +67,8 @@ body {
       }
 
       .card {
-        cursor: pointer;
-
         height: 300px;
+        cursor: default;
       }
 
       .card-inner {
@@ -79,6 +89,18 @@ body {
         }
 
         .card-back {
+          li {
+            list-style: none;
+            padding-bottom: 10px;
+          }
+          .detail {
+            color: rgba(255, 255, 0, 0.884);
+            font-size: 1.5rem;
+          }
+          .detail:hover {
+            color: #fff;
+            cursor: pointer;
+          }
         }
 
         .card-front {
@@ -125,10 +147,16 @@ body {
   background-color: black;
   color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transform: rotateY(180deg);
-}
-
-.card li {
-  list-style: none;
-  padding-bottom: 10px;
+  width: 100%;
+  ul {
+    width: 100%;
+  }
+  @include mobile {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
 }

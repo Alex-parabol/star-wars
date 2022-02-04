@@ -33,7 +33,7 @@ const Species = () => {
                 <p>{specie.name} </p>
               </div>
               <div className="card-back">
-                <h1>{specie.homeworld}</h1>
+                <h1>Features:</h1>
                 <ul>
                   <li>
                     <strong>Languaje:</strong> {specie.language}
@@ -45,7 +45,7 @@ const Species = () => {
                     <strong>Eye colors:</strong> {specie.eye_colors}
                   </li>
                   <Link to={`/species/${specie.name}`}>
-                    <li>Details of {specie.name} </li>
+                    <li className="detail">Details of {specie.name} </li>
                   </Link>
                 </ul>
               </div>

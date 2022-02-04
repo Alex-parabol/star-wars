@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { SpeciesContext } from "../../../../context/SpeciesContext";
+import "./SpeciesDetail.scss";
 
 function SpeciesDetail() {
   const speciesContext = useContext(SpeciesContext);
@@ -9,10 +10,17 @@ function SpeciesDetail() {
   const thisSpecie = speciesContext.find((prod) => prod.name === name);
 
   return (
-    <div>
+    <div className="detail-container">
       <h1>{thisSpecie?.name}</h1>
-      <p>Designation: ${thisSpecie?.designation}</p>
-      <p>{thisSpecie?.films}</p>
+      <p>
+        Description: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Pariatur exercitationem non magni quasi deleniti modi laudantium beatae,
+        qui dolor suscipit voluptatibus eum quo quisquam culpa. Tempore quia
+        veniam consectetur! Hic? Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Cupiditate ea, enim possimus temporibus aspernatur
+        consectetur voluptas nam et molestias dolorem, explicabo assumenda
+        veritatis consequatur aliquid, maxime eaque ex ipsam qui.
+      </p>
     </div>
   );
 }
