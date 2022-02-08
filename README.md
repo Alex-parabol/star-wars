@@ -5,6 +5,9 @@ It includes the option to search, order alphabetically and access a detail for e
 
 # Link to the deploy
 
+https://swapi-tryout.netlify.app/
+(for some reason the link to species do not work on the deploy, but it does work on local, try it)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
