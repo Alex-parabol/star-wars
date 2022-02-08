@@ -9,7 +9,6 @@ const Species = () => {
   const [species, setSpecies] = useState<StarWarsSpecie[]>(
     speciesContext.species
   );
-  console.log(speciesContext.species);
 
   useEffect(() => {
     setSpecies([...speciesContext.species]);
@@ -20,8 +19,6 @@ const Species = () => {
     setSpecies([
       ...speciesContext.species.sort((a, b) => (a.name > b.name ? 1 : -1)),
     ]);
-
-    console.log(species);
   };
 
   return (
