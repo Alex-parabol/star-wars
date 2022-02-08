@@ -1,3 +1,10 @@
+# What is it about?
+
+This app is a simple display of what SWAPI has to offer. It shows different characters of the Star Wars lore as well as races.
+It includes the option to search, order alphabetically and access a detail for each specie.
+
+# Link to the deploy
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

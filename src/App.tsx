@@ -5,10 +5,9 @@ import Header from "./views/list-view/components/header/Header";
 import Search from "./views/list-view/components/search/search";
 import Species from "./views/list-view/components/species/Species";
 import ListViewComponent from "./views/list-view/list-view.component";
-import { StarWarsCharacter, StarWarsPeople } from "./interfaces/index";
-import { StarWarsSpecies, StarWarsSpecie } from "./interfaces/index";
+import { StarWarsCharacter } from "./interfaces/index";
 import SpeciesProvider from "./context/SpeciesContext";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import SpeciesDetail from "./views/list-view/components/detail/SpeciesDetail";
 
 function App() {
@@ -34,6 +33,7 @@ function App() {
     if (!loading) {
       fetchCharacters();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   useEffect(() => {
@@ -44,6 +44,7 @@ function App() {
       setCharacters([...characters, ...people]);
     };
     fetchCharacters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

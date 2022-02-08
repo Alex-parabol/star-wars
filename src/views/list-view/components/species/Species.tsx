@@ -9,11 +9,11 @@ const Species = () => {
   const [species, setSpecies] = useState<StarWarsSpecie[]>(
     speciesContext.species
   );
-  const [ordered, setOrdered] = useState<Boolean>(false);
   console.log(speciesContext.species);
 
   useEffect(() => {
     setSpecies([...speciesContext.species]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const alphabeticalOrder = () => {

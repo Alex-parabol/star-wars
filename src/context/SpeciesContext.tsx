@@ -1,10 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import {
-  StarWarsSpecies,
-  StarWarsSpecie,
-  SpeciesContextValue,
-} from "../interfaces/index";
+import { StarWarsSpecie, SpeciesContextValue } from "../interfaces/index";
 // creamos el context
 
 export const SpeciesContext = createContext<SpeciesContextValue>({
