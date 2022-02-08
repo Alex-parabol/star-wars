@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 
 const Species = () => {
   const speciesContext = useContext(SpeciesContext);
-  const [species, setSpecies] = useState<StarWarsSpecie[]>(speciesContext);
+  const [species, setSpecies] = useState<StarWarsSpecie[]>(
+    speciesContext.species
+  );
   const [ordered, setOrdered] = useState<Boolean>(false);
-  console.log(speciesContext);
+  console.log(speciesContext.species);
 
   useEffect(() => {
-    setSpecies([...speciesContext]);
+    setSpecies([...speciesContext.species]);
   }, []);
 
   const alphabeticalOrder = () => {
-    setSpecies([...speciesContext.sort((a, b) => (a.name > b.name ? 1 : -1))]);
+    setSpecies([
+      ...speciesContext.species.sort((a, b) => (a.name > b.name ? 1 : -1)),
+    ]);
 
     console.log(species);
   };
@@ -26,7 +30,7 @@ const Species = () => {
         Alphabetic Order
       </button>
       <div className="cards">
-        {speciesContext.map((specie) => (
+        {speciesContext.species.map((specie) => (
           <div className="card">
             <div className="card-inner">
               <div className="card-front">

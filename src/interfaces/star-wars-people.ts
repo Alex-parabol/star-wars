@@ -40,6 +40,11 @@ export interface StarWarsSpecies {
   results: StarWarsSpecie[];
 }
 
+export interface SpeciesContextValue {
+  species: StarWarsSpecie[];
+  search: (search?: string) => void;
+}
+
 export interface StarWarsSpecie {
   name: string;
   classification: string;

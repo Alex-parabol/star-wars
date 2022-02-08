@@ -7,7 +7,9 @@ function SpeciesDetail() {
   const speciesContext = useContext(SpeciesContext);
 
   const { name } = useParams();
-  const thisSpecie = speciesContext.find((prod) => prod.name === name);
+  const thisSpecie = speciesContext.species.find((prod) => prod.name === name);
+
+  // A falta de más información en la api, bueno es lorem ipsum :D
 
   return (
     <div className="detail-container">
