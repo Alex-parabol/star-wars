@@ -1,4 +1,3 @@
-import React from "react";
 import sw from "../../../../sw.png";
 import "./Header.scss";
 

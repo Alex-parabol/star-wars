@@ -1,10 +1,5 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { StarWarsCharacter, StarWarsPeople } from "../../interfaces";
+import { StarWarsCharacter } from "../../interfaces";
 import ListViewCard from "./components/list-view-card/list-veiw-card.component";
-/* import "./list-view.component.scss"; */
-
-/* import { prependOnceListener } from "process"; */
 
 function ListViewComponent(props: { characters: StarWarsCharacter[] }) {
   return (
